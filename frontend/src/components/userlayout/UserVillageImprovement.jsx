@@ -433,7 +433,7 @@ function UserVillageImprovement() {
                           >
                             <img
                               src={mediaUrl}
-                              alt={`${record.subject}, photo ${index + 1}`}
+                              alt={`${record.subject}, ${index + 1}`}
                               loading="lazy"
                             />
                           </a>

@@ -466,7 +466,7 @@ function UserCricketMemories() {
                         >
                           <img
                             src={photoUrl}
-                            alt={`Cricket season ${memory.seasonNumber}, photo ${index + 1}`}
+                             alt={`Cricket season ${memory.seasonNumber}, ${index + 1}`}
                             loading="lazy"
                           />
                         </a>

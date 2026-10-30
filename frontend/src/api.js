@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:7000/api'
+  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:7000/api'
 });
 
 // Automatically attach the login token to API requests
@@ -14,9 +14,6 @@ api.interceptors.request.use(
       config.headers.Authorization = `Bearer ${token}`;
     }
 
-    // Let Axios/browser set the correct Content-Type.
-    // JSON requests get JSON headers automatically.
-    // FormData requests get multipart/form-data with boundary.
     if (typeof FormData !== 'undefined' && config.data instanceof FormData) {
       delete config.headers['Content-Type'];
     }

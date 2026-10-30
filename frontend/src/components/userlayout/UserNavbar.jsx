@@ -6,14 +6,6 @@ function UserNavbar() {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  let user = {};
-
-  try {
-    user = JSON.parse(localStorage.getItem('vh_user') || '{}');
-  } catch {
-    user = {};
-  }
-
   const closeMenu = () => setMenuOpen(false);
 
   const handleLogout = () => {
@@ -199,7 +191,10 @@ function UserNavbar() {
             className="user-brand"
             onClick={closeMenu}
           >
-            <img src="https://res.cloudinary.com/dc7py007/image/upload/v1793369674/VadgaonLogo.jpg" alt="Vadgaon Hero's logo" />
+            <img
+              src="https://res.cloudinary.com/dc7py007/image/upload/v1793369674/VadgaonLogo.jpg"
+              alt="Vadgaon Hero's logo"
+            />
 
             <div className="user-brand-text">
               <strong>VADGAON HERO'S</strong>
@@ -267,7 +262,6 @@ function UserNavbar() {
               🏆 Cricket Memories
             </NavLink>
 
-            {/* NEW VILLAGE IMPROVEMENT LINK */}
             <NavLink
               to="/user/village-improvement"
               className={navLinkClass}
